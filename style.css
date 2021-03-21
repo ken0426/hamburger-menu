@@ -1,0 +1,244 @@
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+ margin:0;
+ padding:0;
+ border:0;
+ outline:0;
+ vertical-align:baseline;
+ background:transparent;
+}
+
+body {
+ /* プロジェクトによって変動 */
+ min-width: 1000px;
+ color: #000;
+ line-height: 1.6;
+ font-weight: 400;
+ font-family: 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'YuGothic', '游ゴシック', 'メイリオ', Meiryo, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+
+ width: 100%;
+ font-smoothing: antialiased;
+ font-variant-numeric: tabular-nums;
+ /* safari hover対策 */
+ -webkit-font-smoothing: antialiased;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+ display:block;
+}
+
+ul, ol {
+ list-style:none;
+}
+
+blockquote, q {
+ quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+ content:'';
+ content:none;
+}
+
+a {
+ margin:0;
+ padding:0;
+ vertical-align:baseline;
+ text-decoration: none;
+ color: inherit;
+}
+
+/* change colours to suit your needs */
+ins {
+ background-color:#ff9;
+ color:#000;
+ text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+ background-color:#ff9;
+ color:#000;
+ font-style:italic;
+ font-weight:bold;
+}
+
+del {
+ text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+ border-bottom:1px dotted;
+ cursor:help;
+}
+
+table {
+ border-collapse:collapse;
+ border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+ display:block;
+ height:1px;
+ border:0;
+ border-top:1px solid #cccccc;
+ margin:1em 0;
+ padding:0;
+}
+
+input, select {
+ vertical-align:middle;
+}
+
+img {
+ vertical-align: bottom;
+ line-height: 1.0;
+}
+
+button {
+ line-height: 1.0;
+ background-color: transparent;
+ border: none;
+ cursor: pointer;
+ outline: none;
+ padding: 0;
+ appearance: none;
+}
+
+body{
+  background-color: #eee;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+main{
+  max-width: 1000px;
+  width: 100%;
+  height: 200vh;
+  background-color: #ccc;
+  margin: 50px auto;
+  padding: 20px;
+  font-size: 30px;
+}
+
+.menuButton{
+  display: block;
+  height: 80px;
+  width: 80px;
+  background-color: rgb(177, 177, 177);
+  position: fixed;  /* position: fixed;が position: absolute;の親要素になる */
+  top: 0;
+  right: 0;
+  transition:  .3s;
+  z-index: 3;
+}
+
+.menuButton div{
+  height: 1px;
+  width: 60%;
+  background-color: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: .3s;
+}
+
+.menuButton div:nth-last-of-type(1) {
+  transform: translate(-50%, -15px);
+}
+
+.menuButton div:nth-last-of-type(3) {
+  transform: translate(-50%, 15px);
+}
+
+.menuButton.active div:nth-last-of-type(1){
+  transform: rotate(45deg) translate(-50%, 0);
+  transform-origin: 0% 50%;
+}
+
+.menuButton.active div:nth-last-of-type(2){
+  opacity: 0;
+}
+
+.menuButton.active div:nth-last-of-type(3){
+  transform: rotate(-45deg) translate(-50%, 0);
+  transform-origin: 0% 50%;
+}
+
+nav{
+  /* opacity: 0;
+  visibility: hidden; */
+  transform: translateX(100%); /*はじめは右に横幅分隠れている */
+  transition: .3s;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  background-color: #fff;
+  width: 300px;
+  height: 100vh;
+  padding-top: 20px;
+  overflow: auto;
+  max-height: 100vh;
+}
+
+nav ul{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+nav ul li:not(:first-of-type) {
+  margin-top: 20px;
+}
+
+nav.active{
+  /* opacity: 1;
+  visibility: visible; */
+  transform: translateX(0%); /* もとに戻す */
+}
+
+.mask{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+}
+
+.mask.active{
+  opacity: 0.7;
+  visibility: visible;
+}
